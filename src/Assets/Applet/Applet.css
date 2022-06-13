@@ -1,0 +1,47 @@
+.selectedDot {
+    width: 5px;
+    height: 5px;
+    background-color: #313131;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.appletContainer {
+    display: flex;
+    position: relative;
+    margin-left: 50px;
+    transform: translateY(1vh)
+}
+
+.appletContainer:hover {
+    cursor: pointer;
+}
+
+.appletContainerSelected {
+    display: flex;
+    position: relative;
+    margin-left: 50px;
+    transform: translateY(-1vh);
+}
+
+.appletContainerSelected:hover {
+    cursor: pointer;
+}
+
+.appletIcon {
+    height: 7.5vh;
+    transform: scale(1);
+}
+
+.appletIcon:hover {
+    transform: scale(1.1) translateY(-1vh);
+    transition: transform ease-out 0.25s;
+}
+
+.appletIconSelected {
+    height: 7.5vh;
+    transform: scale(1.1);
+}

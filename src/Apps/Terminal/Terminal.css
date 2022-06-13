@@ -1,0 +1,88 @@
+.terminalContainer {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 60vw;
+    background-color: black;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.terminalHeader {
+    background-color: #212121;
+    color: lightgray;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px 10px 0px 0px;
+    z-index: 2;
+}
+
+.headerButtonContainer {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+
+.closedButton {
+    background-color: #dc3c31;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.closedButton:hover {
+    background-color: #be3329;
+}
+
+.headerButton {
+    background-color: #434343;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.terminalBody {
+    color: #00FF00;
+    font-family: monospace;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    overflow: scroll;
+}
+
+.inputLine {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+
+.blinkingOperator {
+    animation: blinking 0.75s infinite;
+    background-color: #00FF00;
+    height: 15px;
+    width: 7.5px;
+    opacity: 1;
+    cursor: text;
+    margin-left: 5px;
+}
+
+@keyframes blinking {
+    0%, 100% {
+        opacity : 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+    }
+}

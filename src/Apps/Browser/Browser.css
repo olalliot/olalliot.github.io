@@ -1,0 +1,214 @@
+.browserContainer {
+    position: absolute;
+    top: 10%;
+    left: 2.5%;
+    height: 70vh;
+    width: 55vw;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.browserHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    padding-top: 2.5px;
+    padding-left: 10px;
+
+    background-color: #212121;
+    color: lightgray;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.browserButtons {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+
+.browserTabs {
+    display: flex;
+    flex-direction: row;
+}
+
+.browserTab {
+    border-right: 1px solid darkgray;
+    padding-right: 5px;
+    margin-right: 5px;
+    width: 6vw;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.browserTab:hover {
+    background-color: #444444;
+    cursor: pointer;
+}
+
+.browserTabSelected {
+    border-right: 1px solid darkgray;
+    padding-right: 5px;
+    margin-right: 5px;
+    width: 6vw;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #4D4D4D;
+}
+
+.browserURLContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #4D4D4D;
+    padding: 5px;
+}
+
+.openExternalIcon {
+    filter: invert(100%) sepia(0%) saturate(7442%) hue-rotate(62deg) brightness(110%) contrast(112%);
+    height: 80%;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.openExternalIcon:hover {
+    cursor: pointer;
+    filter: invert(77%) sepia(8%) saturate(18%) hue-rotate(330deg) brightness(102%) contrast(105%);
+}
+
+.browserURL {
+    background-color: #212121;
+    color: white;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    height: auto;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.darkModeIcon {
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    width: 20px;
+    filter: invert(100%) sepia(0%) saturate(7442%) hue-rotate(62deg) brightness(110%) contrast(112%);
+}
+
+.darkModeIcon:hover {
+    cursor: pointer;
+    filter: invert(77%) sepia(8%) saturate(18%) hue-rotate(330deg) brightness(102%) contrast(105%);
+}
+
+.browserPage {
+    overflow-y: scroll;
+    height: 65vh;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+
+/* LIGHT MODE STYLES */
+
+.browserHeader-Light {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    padding-top: 2.5px;
+    padding-left: 10px;
+
+    background-color: #D0D0D0;
+    color: #989898;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.browserTab-Light {
+    border-right: 1px solid #989898;
+    padding-right: 5px;
+    margin-right: 5px;
+    width: 6vw;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.browserTab-Light:hover {
+    background-color: #cacaca;
+    cursor: pointer;
+}
+
+.browserTabSelected-Light {
+    border-right: 1px solid #989898;
+    padding-right: 5px;
+    margin-right: 5px;
+    width: 6vw;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #b9b9b9;
+    color: #212121;
+}
+
+.openExternalIcon-Light {
+    height: 80%;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    filter: invert(15%) sepia(7%) saturate(0%) hue-rotate(142deg) brightness(103%) contrast(88%);
+}
+
+.openExternalIcon-Light:hover {
+    cursor: pointer;
+    filter: invert(13%) sepia(0%) saturate(28%) hue-rotate(206deg) brightness(93%) contrast(97%);
+}
+
+.browserURLContainer-Light {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #b9b9b9;
+    padding: 5px;
+}
+
+.browserURL-Light {
+    background-color: #cacaca;
+    color: #212121;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    height: auto;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.lightModeIcon {
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    width: 20px;
+    filter: invert(15%) sepia(7%) saturate(0%) hue-rotate(142deg) brightness(103%) contrast(88%);
+}
+
+.lightModeIcon:hover {
+    cursor: pointer;
+    filter: invert(13%) sepia(0%) saturate(28%) hue-rotate(206deg) brightness(93%) contrast(97%);
+}

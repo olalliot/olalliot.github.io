@@ -1,0 +1,135 @@
+.emailContainer {
+    height: 50vh;
+    width: 70vw;
+    position: absolute;
+    left: 15%;
+    top: 2.5%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.emailHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+
+    background-color: #212121;
+    color: lightgray;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.emailElement {
+    display: flex;
+    background-color: #303030;
+    width: 100%;
+    height: 50vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: scroll;
+    flex-direction: row;
+}
+
+.emailItems {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 90%;
+    padding-top: 15px;
+    margin: 10px;
+    background-color: #212121;
+    border-radius: 10px;
+}
+
+.emailItem {
+    padding: 10px;
+    display: flex;
+    padding-bottom: 15px;
+}
+
+.emailItem:hover {
+    background-color: #4a4a4a;
+    cursor: pointer;
+}
+
+.emailItemSelect {
+    background-color: #4a4a4a;
+    padding: 10px;
+    display: flex;
+    padding-bottom: 15px;
+}
+
+.emailLogo {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.emailText {
+    display: flex;
+    flex-direction: column;
+}
+
+.emailTitle {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.emailSubtitle {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+    color: lightgray
+}
+
+.emailBody {
+    display: flex;
+    padding: 10px 20px;
+    width: 70%;
+    margin: 10px;
+    background-color: #212121;
+    height: 90%;
+    border-radius: 10px;
+}
+
+.emailBodyHeader {
+    width : 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.emailBodyHeaderSubject {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.emailBodyHeaderDetails {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.emailBodyLogo {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit:scale-down;
+    margin-right: 20px;
+}
+
+.emailBodyHeaderCompany {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.emailBodyHeaderDate {
+    font-weight: 300;
+    color: lightgray;
+    font-size: 12px;
+    font-style: italic;
+}
