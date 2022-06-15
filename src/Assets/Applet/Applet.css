@@ -12,7 +12,6 @@
 .appletContainer {
     display: flex;
     position: relative;
-    margin-left: 50px;
     transform: translateY(1vh)
 }
 
@@ -23,7 +22,6 @@
 .appletContainerSelected {
     display: flex;
     position: relative;
-    margin-left: 50px;
     transform: translateY(-1vh);
 }
 
@@ -33,7 +31,7 @@
 }
 
 .appletIcon {
-    height: 7.5vh;
+    height: 4vw;
     transform: scale(1);
 }
 
@@ -43,7 +41,7 @@
 }
 
 .appletIconSelected {
-    height: 7.5vh;
+    height: 4vw;
     transform: scale(1.1);
 }
 

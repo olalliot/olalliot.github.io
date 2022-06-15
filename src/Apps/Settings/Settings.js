@@ -98,7 +98,7 @@ const Settings = (props) => {
                     </div>
                     <>
                         <p className="settingsSourceCodeText">View the source code for this website by visiting the link below</p>
-                        <a href="/ResumeOctave.pdf" className="settingsSourceCodeLink">
+                        <a href="https://github.com/olalliot/olalliot.github.io" rel="noopener noreferrer" className="settingsSourceCodeLink">
                             <img alt="GitHub Logo" src="/icons/github.png" className="settingsSourceCodeLinkIcon"/>
                             <p className="settingsSourceCodeLinkText">View on GitHub</p>
                         </a>

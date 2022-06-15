@@ -48,7 +48,7 @@ const App = () => {
   }
 
   const updateOrder = (windowName) => {
-    for (const [key, _] of Object.entries(windows)) {
+    for (const [key] of Object.entries(windows)) {
       if (key === windowName) { //Leave that one alone
         windows[windowName]["index"] = 6;
       } else {
