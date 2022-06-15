@@ -29,6 +29,7 @@
 
 .appletContainerSelected:hover {
     cursor: pointer;
+    display: block;
 }
 
 .appletIcon {
@@ -37,11 +38,25 @@
 }
 
 .appletIcon:hover {
-    transform: scale(1.1) translateY(-1vh);
+    transform: scale(1.025) translateY(-0.25vh);
     transition: transform ease-out 0.25s;
 }
 
 .appletIconSelected {
     height: 7.5vh;
     transform: scale(1.1);
+}
+
+.appletText {
+    position: absolute;
+    top: -5.75vh;
+    text-align: center;
+    background-color: #333333;
+    font-weight: 300;
+    font-size: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
 }

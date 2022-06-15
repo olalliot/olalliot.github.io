@@ -1,13 +1,15 @@
+import { useState } from "react";
 import "./Settings.css";
 
 const LogoItem = (props) => {
     const {icon, title, value} = props;
+
     return(
         <div className="settingsInformationItem">
             <img className="settingsInformationIcon" alt="Information Icon" src={icon}/>
             <div className="settingsInformationText">
                 <p className="settingsInformationItemTitle">{title}</p>
-                <p className="settingsInformationItemValue">{value}</p>
+                <p className="settingsInformationItemValue"><a href={value} className="settingsInformationItemLink">{value}</a></p>
             </div>
         </div>
     );
@@ -15,6 +17,7 @@ const LogoItem = (props) => {
 
 const Settings = (props) => {
     const {isSelected} = props;
+    const [fileDownloaded, setFileDownloaded] = useState(false);
     const contact = [
         {
             "title": "Address",
@@ -82,8 +85,11 @@ const Settings = (props) => {
                     <div className="settingsSectionTitle">
                         <p>CV</p>
                     </div>
-                    <div className="settingsDownloadButtonContainer">
-                        <button className="settingsDownloadButton"><img alt="Download icon" src="/icons/download.png" className="settingsDownloadButtonIcon"/>Download my CV</button>
+                    <div className="settingsDownloadButtonContainer" onClick={() => setFileDownloaded(true)}>
+                        <a className={fileDownloaded ? "settingsDownloadButtonConfirm" : "settingsDownloadButton"} href={"/ResumeOctave.pdf"} download>
+                            <img alt="Download icon" src={fileDownloaded ? "/icons/upvote.png" : "/icons/download.png"} className={fileDownloaded ? "settingsDownloadButtonIconConfirm" : "settingsDownloadButtonIcon"}/>
+                            Download my CV
+                        </a>
                     </div>
                 </div>
                 <div className="settingsSourceCode">
@@ -92,9 +98,9 @@ const Settings = (props) => {
                     </div>
                     <>
                         <p className="settingsSourceCodeText">View the source code for this website by visiting the link below</p>
-                        <a href="" className="settingsSourceCodeLink">
+                        <a href="/ResumeOctave.pdf" className="settingsSourceCodeLink">
                             <img alt="GitHub Logo" src="/icons/github.png" className="settingsSourceCodeLinkIcon"/>
-                            <p>GitHub Link</p>
+                            <p className="settingsSourceCodeLinkText">View on GitHub</p>
                         </a>
                     </>
                 </div>

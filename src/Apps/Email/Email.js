@@ -9,21 +9,31 @@ const Email = (props) => {
             "title": "IT @ Wollmuth, Maher & Deutsch",
             "subtitle" : "New York • 2020 - Present",
             "company": "Wollmuth, Maher & Deutsch LLP",
-            "logoPath": "/logos/wmd.jpeg"
+            "logoPath": "/logos/wmd.jpeg",
+            "summary": "",
+            "objectives": ["Implementation of firm-wide new DMS and accounting system", "Developped Excel redaction ribbon add-in", "MergeMail document generator", "Oversaw 2 beta tests for select partners working with 3rd party vendors", "Helped oversee data security and containment when necessary", "Advised partners with eDiscovery best practices and strategies"],
+            "skills": ["Python (tooling)", "JavaScript (tooling)", "Salesforce", "Microsoft Flow", "Office Add-in development", "Project Management", "Data Security"],
         }, 
         {
             "title": "Software Intern, Zenly",
             "subtitle" : "Paris • 2019",
             "company": "Zenly",
             "logoPath": "/logos/zenly.jpeg",
+            "summary": "",
+            "objectives": ["Designed and Pitched a new feature for the app", "Deployed new sharing options for user content on iOS and Android", "Prototyped new design ideas for user app"],
+            "skills": ["ProtoPie / Sketch", "Swift", "Kotlin", "C (used for prototyping efffects)"],
         },
         {
             "title" : "iOS Intern, Cleeng",
             "subtitle" : "Amsterdam • 2017",
             "company" : "Cleeng",
             "logoPath": "/logos/cleeng.jpeg",
+            "summary": "",
+            "objectives": ["Model App for Cleeng clients"],
+            "skills": ["Objective-C", "Swift"],
         }
-    ]
+    ];
+
     const bringToFront = () => {
         props.updateOrder("Email");
     }
@@ -67,7 +77,19 @@ const Email = (props) => {
                         </div>
                     </div>
                     <div className="emailBodyContent">
-
+                        <p className="emailBodySummary">{}</p>
+                        <div className="emailBodyAchieved">
+                            <h4>Objectives Achieved</h4>
+                            {emails[activeMail]["objectives"].map((o) => {
+                                return (
+                                    <p className="emailBodyListItem">• {o}</p>
+                                );
+                            })}
+                        </div>
+                        <div className="emailBodySkillsDeveloped">
+                            <h4>Skills Learned</h4>
+                            {}
+                        </div>
                     </div>
                 </div>
             </div>

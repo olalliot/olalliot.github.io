@@ -88,12 +88,11 @@ const App = () => {
           closeWindow={closeWindow}
         />
         <div className="dockContainer">
-            <Applet src="/appIcons/browser.png" isSelected={windows["Browser"]["shown"]} target="Browser" showWindow={showWindow}/>
-            <Applet src="/appIcons/email.png" isSelected={windows["Email"]["shown"]} target="Email" showWindow={showWindow}/>
-            <Applet src="/appIcons/documents.png" isSelected={windows["Education"]["shown"]} target="Education" showWindow={showWindow}/>
-            <Applet src="/appIcons/terminal.png" isSelected={windows["Terminal"]["shown"]} target="Terminal" showWindow={showWindow}/>
-            <Applet src="/appIcons/contact.png" isSelected={windows["Contacts"]["shown"]} target="Contacts" showWindow={showWindow}/>
-            <Applet src="/appIcons/more.png" isSelected={windows["Settings"]["shown"]} target="Settings" showWindow={showWindow}/>
+            <Applet src="/appIcons/browser.png" label="Projects" isSelected={windows["Browser"]["shown"]} target="Browser" showWindow={showWindow}/>
+            <Applet src="/appIcons/email.png" label="Experience" isSelected={windows["Email"]["shown"]} target="Email" showWindow={showWindow}/>
+            <Applet src="/appIcons/documents.png" label="Education" isSelected={windows["Education"]["shown"]} target="Education" showWindow={showWindow}/>
+            <Applet src="/appIcons/terminal.png" label="About" isSelected={windows["Terminal"]["shown"]} target="Terminal" showWindow={showWindow}/>
+            <Applet src="/appIcons/more.png" label="More" isSelected={windows["Settings"]["shown"]} target="Settings" showWindow={showWindow}/>
         </div>
       </>
   );

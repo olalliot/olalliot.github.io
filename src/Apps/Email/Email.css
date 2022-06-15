@@ -87,6 +87,7 @@
 
 .emailBody {
     display: flex;
+    flex-direction: column;
     padding: 10px 20px;
     width: 70%;
     margin: 10px;
@@ -132,4 +133,20 @@
     color: lightgray;
     font-size: 12px;
     font-style: italic;
+}
+
+.emailBodyContent {
+    background-color: white;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.emailBodyListItem {
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 5px;
 }

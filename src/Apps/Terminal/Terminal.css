@@ -10,6 +10,7 @@
     border: 1px solid gray;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
 .terminalHeader {
@@ -67,22 +68,27 @@
     align-items: center;
 }
 
-.blinkingOperator {
-    animation: blinking 0.75s infinite;
-    background-color: #00FF00;
-    height: 15px;
-    width: 7.5px;
-    opacity: 1;
-    cursor: text;
-    margin-left: 5px;
+.terminalInput {
+    font-family: monospace;
+    text-decoration: none;
+    background-color: transparent;
+    caret-color: transparent;
+    border: none;
+    display: block;
+    color: #00FF00;
+    animation: blinking 0.75s infinite linear;
+}
+
+.terminalInput:focus {
+    outline: none;
 }
 
 @keyframes blinking {
     0%, 100% {
-        opacity : 1;
+        border-right : none;
     }
 
     25%, 75% {
-        opacity: 0;
+        border-right: 5px solid #00FF00;
     }
 }

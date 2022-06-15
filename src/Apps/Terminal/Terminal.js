@@ -1,8 +1,18 @@
 import "./Terminal.css";
+import { useState, useRef, useEffect } from "react";
+import UserEntry from "./Sections/UserEntry";
+import About from "./Sections/About";
+import Specs from "./Sections/Specs";
+import Help from "./Sections/Help";
+import Unknown from "./Sections/Unknown";
 
 const Terminal = (props) => {
 
     const {isSelected} = props;
+    const inputRef = useRef(null);
+    const textFieldRef = useRef(null);
+    const [sections, setSections] = useState([<UserEntry command="About"/>, <About />, <userEntry command="Specs"/>, <Specs />, <><br/><p>------------------------------------------</p><p>Enter "help" below to see all commands</p></>]);
+    const [userInput, setUserInput] = useState("");
 
     const closeTerminal = () => {
         props.closeWindow("Terminal");
@@ -10,6 +20,47 @@ const Terminal = (props) => {
 
     const bringToFront = () => {
         props.updateOrder("Terminal");
+    }
+
+    useEffect(() => { // This is to auto focus the text field
+        if (textFieldRef.current) {
+            textFieldRef.current.focus();
+        }
+    }, [])
+
+    useEffect(() => { //This is what scrolls the div to bottom after a user entry
+        if (inputRef.current) {
+            inputRef.current.scrollIntoView();
+        }
+    }, [sections])
+
+    const checkForEnter = (e) => {
+        if (e.key === "Enter") {
+            //Handle submit
+            setSections((sections) => [...sections, <UserEntry command={userInput}/>])
+            checkUserInput();
+            setUserInput("");
+        }
+    }
+
+    const checkUserInput = () => {
+        const val = userInput.toLowerCase();
+        console.log(val);
+        if (val === "clear") {
+            setSections([setSections(() => [<UserEntry command={userInput}/>])])
+        } else if (val === "about") {
+            setSections((sections) => [...sections, <About/>]); 
+        } else if (val === "specs" || val === "specifications") {
+            setSections((sections) => [...sections, <Specs/>]);
+        } else if (val === "help") {
+            setSections((sections) => [...sections, <Help/>]);
+        } else {
+            setSections((sections) => [...sections, <Unknown/>]);
+        }
+    }
+
+    const userTyping = (inp) => {
+        setUserInput(inp.target.value)
     }
 
     return(
@@ -25,30 +76,25 @@ const Terminal = (props) => {
                 </div>
             </div>
             <div className="terminalBody">
-                <p>------------------------------------------</p>
-                <p>USER INFORMATION</p>
-                <p>------------------------------------------</p>
-                <h4>octave{">"} About Me</h4>
-                <p>I was born in Paris, and had the chance to live in Paris, Brussels, Washington D.C and New York while growing up (that meant moving every 3 years!!)</p>
-                <p>After graduating from the Ecole Jeannine Manuel with my Bacclauréat OIB Options Scientifique with <i>Mention Très Bien</i>, I went to the University of Michigan; where I earned my B.S in Computer Science.</p>
-                <p>Following my graduation during the slightly tumultuous Spring of 2020, I started working at Wollmuth, Maher and Deutsch, a litigation firm in New York.</p>
-                <p>Outside of work, I like to pursue a variety of side projects, some of which you can find by selecting the browser icon in the dock below. When I'm not programming, I like to channel my inner frenchman by cooking elaborate recipes that I've found online, and spending some time with my ever troublesome dog Korra </p>
-                <br />
-                <h4>octave{">"} Specs</h4>
-                <p>------------------------------------------</p>
-                <p>USER SPECIFICATIONS</p>
-                <p>------------------------------------------</p>
-                <p>Title: Front-End Developer, UI/UX Designer</p>
-                <p>Languages: JavaScript, TypeScript, Python, Swift, Solidity</p>
-                <p>Frameworks: React, React Native, Next.JS</p>
-                <p>Additional Skills: CSS/SCSS, HTML, GCP/Firebase, AWS, Wireframing, Prototyping, Smart Contract creation and deployment</p>
-                <p>(Spoken) Languages: French, English</p>
-                <p>Traits: Flexible, Driven, Curious, Team Player, Communicator</p>
-                <br></br>
+                {sections.map((s) => {
+                    return(
+                        s
+                    );
+                })}
                 <div className="inputLine">
                     <h4>octave{">"}</h4>
+                    <input
+                        autoFocus
+                        type="text"
+                        className="terminalInput" 
+                        onKeyDown={checkForEnter}
+                        onChange={(change) => userTyping(change)}
+                        value={userInput}
+                        style={{width: `${userInput.length * 8 + 10}px`}}
+                    />
                     <div className="blinkingOperator"/>
                 </div>
+                <div style={{height: "1px", width: "1px"}} ref={inputRef} />
             </div>
         </div>
     )
