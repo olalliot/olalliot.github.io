@@ -24,35 +24,68 @@
     width: 50vw;
     background-color: #333333;
     display: flex;
+    flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .educationStorageDisplay {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
+.educationStorageImg {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.educationStorageIcon {
+    transform: rotate(-25deg);
+    border: 3px solid #999999;
+    border-radius: 50%;
+    padding: 20px;
+    filter: invert(67%) sepia(0%) saturate(0%) hue-rotate(219deg) brightness(92%) contrast(84%);
+}
+
+.educationStorageBarContainer {
+    width: 75%;
+    padding: 0px 20px;
+}
+
 .educationStorageExplanation {
     color: #999999;
-    padding: 0 2.5vw;
     margin: 30px 0px;
 }
 
 .educationStorageBar {
     display: flex;
     flex-direction: row;
-    max-width: 40vw;
+    width: 100%;
     margin: 20px 0px;
     border-radius: 5px;
     height: 2.5vh;
     border: 1px solid #333333;
+    animation: storageBarGrowth .25s ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes storageBarGrowth {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
  
 .educationStorageBarParis {
-    background-color:firebrick;
+    background-color:#cd3439;
     border-radius: 5px 0px 0px 5px;
     width: 18vw;
     height: 100%;
@@ -60,7 +93,7 @@
 }
 
 .educationStorageBarMich {
-    background-color: gold;
+    background-color: #f8cd47;
     width: 18vw;
     height: 100%;
     position: relative
@@ -72,6 +105,13 @@
     width: 4vw;
     height: 100%;
     position: relative;
+}
+
+.educationStorageBarParis:hover, .educationStorageBarMich:hover, .educationStorageBarRemaining:hover {
+    box-shadow: 0px 5px 5px rgba(96, 96, 96, 0.5);
+    transform: scale(1.05);
+    z-index: 2;
+    transition: transform ease-out 0.15s;
 }
 
 .educationBarElementLabelContainer {
@@ -114,4 +154,13 @@
     border-right: 5px solid transparent;
     border-top: 5px solid #999999;
     margin: -10px auto;
+}
+
+.educationStorageDetails {
+    color: #999999;
+    font-size: 12px;
+    font-weight: 300;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    line-height: 25px;
 }
