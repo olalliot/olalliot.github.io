@@ -55,7 +55,7 @@ const Email = (props) => {
                 <div className="emailItems">
                     {emails.map((e, idx) => {
                         return(
-                            <div className={activeMail === idx ? "emailItemSelect" : "emailItem"} onClick={() => setActiveMail(idx)}>
+                            <div key={`email-${idx}`} className={activeMail === idx ? "emailItemSelect" : "emailItem"} onClick={() => setActiveMail(idx)}>
                                 <img className="emailLogo" alt="Company Logo" src={e.logoPath} />
                                 <div className="emailText">
                                     <p className="emailTitle">{e.title}</p>
@@ -80,17 +80,17 @@ const Email = (props) => {
                         <p className="emailBodySummary">{emails[activeMail]["summary"]}</p>
                         <div className="emailBodyAchieved">
                             <h4>Objectives Achieved</h4>
-                            {emails[activeMail]["objectives"].map((o) => {
+                            {emails[activeMail]["objectives"].map((o, idx) => {
                                 return (
-                                    <p className="emailBodyListItem">• {o}</p>
+                                    <p key={`objectives-${idx}`} className="emailBodyListItem">• {o}</p>
                                 );
                             })}
                         </div>
                         <div className="emailBodySkillsDeveloped">
                             <h4>Skills Developed</h4>
-                            {emails[activeMail]["skills"].map((o) => {
+                            {emails[activeMail]["skills"].map((o, idx) => {
                                 return (
-                                    <p className="emailBodyListItem">• {o}</p>
+                                    <p key={`skills-${idx}`} className="emailBodyListItem">• {o}</p>
                                 );
                             })}
                         </div>

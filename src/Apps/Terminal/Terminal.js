@@ -1,6 +1,6 @@
 import "./Terminal.css";
 import { useState, useRef, useEffect } from "react";
-import UserEntry from "./Sections/UserEntry";
+import UserCommand from "./Sections/UserCommand";
 import About from "./Sections/About";
 import Specs from "./Sections/Specs";
 import Help from "./Sections/Help";
@@ -11,7 +11,7 @@ const Terminal = (props) => {
     const {isSelected} = props;
     const inputRef = useRef(null);
     const textFieldRef = useRef(null);
-    const [sections, setSections] = useState([<UserEntry command="About"/>, <About />, <userEntry command="Specs"/>, <Specs />, <><br/><p>------------------------------------------</p><p>Enter "help" below to see all commands</p></>]);
+    const [sections, setSections] = useState([<UserCommand command="About"/>, <About />, <UserCommand command="Specs"/>, <Specs />, <><br/><p>------------------------------------------</p><p>Enter "help" below to see all commands</p></>]);
     const [userInput, setUserInput] = useState("");
 
     const closeTerminal = () => {
@@ -37,7 +37,7 @@ const Terminal = (props) => {
     const checkForEnter = (e) => {
         if (e.key === "Enter") {
             //Handle submit
-            setSections((sections) => [...sections, <UserEntry command={userInput}/>])
+            setSections((sections) => [...sections, <UserCommand command={userInput}/>])
             checkUserInput();
             setUserInput("");
         }
@@ -47,7 +47,7 @@ const Terminal = (props) => {
         const val = userInput.toLowerCase();
         console.log(val);
         if (val === "clear") {
-            setSections([setSections(() => [<UserEntry command={userInput}/>])])
+            setSections([setSections(() => [<UserCommand command={userInput}/>])])
         } else if (val === "about") {
             setSections((sections) => [...sections, <About/>]); 
         } else if (val === "specs" || val === "specifications") {
@@ -76,9 +76,9 @@ const Terminal = (props) => {
                 </div>
             </div>
             <div className="terminalBody">
-                {sections.map((s) => {
+                {sections.map((s, idx) => {
                     return(
-                        s
+                        <div key={idx}>{s}</div>
                     );
                 })}
                 <div className="inputLine">

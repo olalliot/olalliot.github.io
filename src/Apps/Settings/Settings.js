@@ -65,9 +65,9 @@ const Settings = (props) => {
                         <p>Contact Information</p>
                     </div>
                     <div className="settingsInformationItems">
-                        {contact.map((c) => {
+                        {contact.map((c, idx) => {
                             return(
-                                <LogoItem icon={c.icon} title={c.title} value={c.value} />
+                                <LogoItem icon={c.icon} title={c.title} value={c.value} key={idx} />
                             );
                         })}
                     </div>

@@ -3,6 +3,7 @@ import Terminal from './Apps/Terminal/Terminal';
 import Browser from './Apps/Browser/Browser';
 import Email from './Apps/Email/Email';
 import Settings from './Apps/Settings/Settings';
+import Education from './Apps/Education/Education';
 import { useState } from 'react';
 import './App.css';
 
@@ -18,10 +19,6 @@ const App = () => {
       "index": 6,
     },
     "Browser" : {
-      "shown" : false,
-      "index" : 6,
-    },
-    "Contacts" : {
       "shown" : false,
       "index" : 6,
     },
@@ -78,6 +75,12 @@ const App = () => {
         <Email
           isSelected={windows["Email"]["shown"]}
           order={windows["Email"]["index"]}
+          updateOrder={updateOrder}
+          closeWindow={closeWindow}
+        />
+        <Education
+          isSelected={windows["Education"]["shown"]}
+          order={windows["Education"]["index"]}
           updateOrder={updateOrder}
           closeWindow={closeWindow}
         />
