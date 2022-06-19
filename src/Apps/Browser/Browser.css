@@ -153,6 +153,20 @@
     font-size: 13px;
 }
 
+
+.projectCoverContainer {
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectCoverPhoto {
+    max-width: 65%;
+    height: auto;
+}
+
 .projectStack {
     display: flex;
     flex-direction: row;
@@ -169,7 +183,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 33%;
+    max-width: 33%;
 }
 
 .stackItemIcon {
@@ -184,7 +198,22 @@
 }
 
 .browserPageSectionTitle {
-    padding: 0px 20px;
+    padding: 20px 20px 10px 20px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.projectDescription {
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.notableContainer {
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
 }
 
 /* LIGHT MODE STYLES */

@@ -13,7 +13,7 @@ const Browser = (props) => {
             "Position": "CTO & Co-Founder",
             "Period": "Ongoing",
             "Platform": "Website",
-            "imgURL": "",
+            "imgURL": "/projectCovers/delph.png",
             "stack": [
                 ["Material UI", "/stackIcons/mui.png"],
                 ["Next.JS", "/stackIcons/nextJS.png"],
@@ -35,20 +35,23 @@ const Browser = (props) => {
             "Position": "Founder",
             "Period": "Nov. 2021 - Ongoing",
             "Platform": "Website",
-            "imgURL": "",
+            "imgURL": "/projectCovers/latoile.png",
             "stack": [
                 ["React", "/stackIcons/React-icon.png"],
                 ["Firebase", "/stackIcons/firebase.png"],
                 ["Google Cloud Platform", "/stackIcons/gcp_logo.png"],
             ],
-            "description": "Monthly collaboritve canvas. Reset at end of month and sold as 1 of 1 NFT. Inspired by Reddit's r/place and the Million Dollar Homepage",
-            "Notable": []
+            "description": "Monthly collaborative canvas. Reset at end of month and sold as 1 of 1 NFT. Inspired by Reddit's r/place and the Million Dollar Homepage",
+            "Notable": [
+                "3 canvases minted since Jan. 2022",
+                "Project used as opportunity to learn & develop Web3 skillset"
+            ]
         },
         {
             "Position": "Founder & Lead Dev",
             "Period": "Sep. 2019 - Dec. 2019",
             "Platform": "Mobile App",
-            "imgURL": "",
+            "imgURL": "/projectCovers/convocapp.png",
             "stack": [
                 ["Swift", "/stackIcons/swift_logo.png"],
                 ["Kotlin", "/stackIcons/kotlin.png"],
@@ -57,13 +60,14 @@ const Browser = (props) => {
             "description": "A live transcription and translation AR app for the hard-of-hearing",
             "Notable": [
                 "Awarded social & community prize during showcase",
+                "Class passed with A grade"
             ]
         },
         {
             "Position": "CTO & Co-Founder",
             "Period": "Nov. 2019 - Mar. 2020",
             "Platform": "Website",
-            "imgURL": "",
+            "imgURL": "/projectCovers/mileout.png",
             "stack": [
                 ["React", "/stackIcons/React-icon.png"],
                 ["React-Redux", "/stackIcons/redu.png"],
@@ -81,7 +85,7 @@ const Browser = (props) => {
             "Position": "Co-Founder & CTO",
             "Period": "Jan. 2019 - Jun. 2019",
             "Platform": "Mobile App",
-            "imgURL": "",
+            "imgURL": "/projectCovers/taskdaddy.png",
             "stack": [
                 ["Expo (React Native)", "/stackIcons/expo.png"],
                 ["React-Redux", "/stackIcons/redu.png"],
@@ -90,7 +94,10 @@ const Browser = (props) => {
                 ["AWS", "/stackIcons/aws.png"],
             ],
             "description": "A productivity app where users back their tasks with a small bet, which is sent to charity if they fail their task",
-            "Notable": [],
+            "Notable": [
+                "1 one of 5 projects selected for finalist pitching competition to jury of investors",
+                "Class passed with A+"
+            ],
         }
     ];
 
@@ -155,7 +162,10 @@ const Browser = (props) => {
                         <p className="projectInformationTitle">{content[activeTab]["Platform"]}</p>
                     </div>
                 </div>
-                <h4 className="browserPageSectionTitle">Stack</h4>
+                <div className="projectCoverContainer">
+                    <img className="projectCoverPhoto" alt="Project Cover" src={content[activeTab]["imgURL"]}/>
+                </div>
+                <p className="browserPageSectionTitle">Stack</p>
                 <div className="projectStack">
                     {content[activeTab]["stack"].map((s) => {
                         return (
@@ -166,9 +176,9 @@ const Browser = (props) => {
                         );
                     })}
                 </div>
-                <h4 className="browserPageSectionTitle">About</h4>
+                <p className="browserPageSectionTitle">About</p>
                 <p className="projectDescription">{content[activeTab]["description"]}</p>
-                <h4 className="browserPageSectionTitle">Notable</h4>
+                <p className="browserPageSectionTitle">Notable</p>
                 <div className="notableContainer">
                     {content[activeTab]["Notable"].map((n) => {
                         return (
