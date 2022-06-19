@@ -196,6 +196,7 @@
 }
 
 .settingsSourceCodeText {
+    font-size: 1vw;
     color: #999999;
     font-weight: 300;
     font-family: Arial, Helvetica, sans-serif;

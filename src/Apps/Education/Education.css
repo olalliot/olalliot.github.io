@@ -48,8 +48,10 @@
     transform: rotate(-25deg);
     border: 3px solid #999999;
     border-radius: 50%;
-    padding: 20px;
+    padding: 1.5vw;
     filter: invert(67%) sepia(0%) saturate(0%) hue-rotate(219deg) brightness(92%) contrast(84%);
+    width: 3vw;
+    height: auto;
 }
 
 .educationStorageBarContainer {

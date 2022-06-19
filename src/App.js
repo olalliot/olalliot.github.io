@@ -4,11 +4,21 @@ import Browser from './Apps/Browser/Browser';
 import Email from './Apps/Email/Email';
 import Settings from './Apps/Settings/Settings';
 import Education from './Apps/Education/Education';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
-const App = () => {
+const WarningMessage = (props) => {
+  return (
+    <div className={props.showWarning ? "warningMessageContainer" : "hidden"}>
+      <h3>Woah Nelly!</h3>
+      <p className="warningMessageText">My website is only optimized for viewing on a computer (for now!). I highly recommend you switch over to your PC or Mac if possible. If not, I'd at least recommend you turn your phone into landscape mode to make the experience a little better. Check back soon to see when I implement the mobile version!</p>
+      <button className="warningMessageDismiss" onClick={() => props.dismissMessage()}>Sad to hear, but I understand</button>
+    </div>
+  );
+}
 
+const App = () => {
+  const [showWarning, setShowWarning] = useState(false);
   const [windows, setWindows] = useState({
     "Terminal" : {
       "shown": false,
@@ -31,6 +41,12 @@ const App = () => {
       "index" : 6,
     }
   });
+
+  useEffect(() => {
+    if (window.innerWidth < window.innerHeight) { // Very basic check to see if user is on mobile
+      setShowWarning(true);
+    }
+  }, []);
 
   const showWindow = (windowName) => {
     windows[windowName]["shown"] = true;
@@ -97,6 +113,7 @@ const App = () => {
             <Applet src="/appIcons/terminal.png" label="About" isSelected={windows["Terminal"]["shown"]} target="Terminal" showWindow={showWindow}/>
             <Applet src="/appIcons/more.png" label="More" isSelected={windows["Settings"]["shown"]} target="Settings" showWindow={showWindow}/>
         </div>
+        <WarningMessage showWarning={showWarning} dismissMessage={() => setShowWarning(false)} />
       </>
   );
 } 
