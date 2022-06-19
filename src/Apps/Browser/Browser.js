@@ -167,9 +167,9 @@ const Browser = (props) => {
                 </div>
                 <p className="browserPageSectionTitle">Stack</p>
                 <div className="projectStack">
-                    {content[activeTab]["stack"].map((s) => {
+                    {content[activeTab]["stack"].map((s, idx) => {
                         return (
-                            <div className="stackItem">
+                            <div key={`stackItem-${idx}`} className="stackItem">
                                 <img alt="stack icon" src={s[1]} className="stackItemIcon"/>
                                 <p className="stackItemName">{s[0]}</p>
                             </div>
@@ -180,9 +180,9 @@ const Browser = (props) => {
                 <p className="projectDescription">{content[activeTab]["description"]}</p>
                 <p className="browserPageSectionTitle">Notable</p>
                 <div className="notableContainer">
-                    {content[activeTab]["Notable"].map((n) => {
+                    {content[activeTab]["Notable"].map((n, idx) => {
                         return (
-                            <div className="notableItem">
+                            <div key={`notableItem-${idx}`} className="notableItem">
                                 <p className="notableText">- {n}</p>
                             </div>
                         )

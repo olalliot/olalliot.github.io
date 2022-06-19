@@ -71,9 +71,9 @@ const Education = (props) => {
                 <div className="educationStorageDetails">
                     <div className={selectionHeader ? "educationBarElementTitle" : "hidden"}>
                         <h4>{selectionHeader}</h4>
-                        {educationEntries[selection].map((e) => {
+                        {educationEntries[selection].map((e, idx) => {
                             return(
-                                <p>{e}</p>
+                                <p key={`item-${idx}`}>{e}</p>
                             )
                         })}
                     </div>
