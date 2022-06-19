@@ -116,8 +116,76 @@
     height: 65vh;
     width: 100%;
     background-color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+.projectInformation {
+    display: flex;
+    flex-direction: row;
+}
+
+.projectInformationItem {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    border-bottom: 1px solid lightgray;
+}
+
+.projectInformationItem:first-child {
+    border-right: 1px solid lightgray;
+}
+
+.projectInformationItem:last-child {
+    border-left: 1px solid lightgray;
+}
+
+.projectInformationLabel {
+    font-weight: 300;
+    font-size: 11px;
+    color: gray;
+}
+
+.projectInformationTitle {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.projectStack {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px 30px;
+    margin: 10px 20px;
+    align-items: center;
+    row-gap: 15px;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.stackItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 33%;
+}
+
+.stackItemIcon {
+    width: 10%;
+    height: auto;
+    padding-right: 10px;
+}
+
+.stackItemName {
+    font-size: 12px;
+    font-weight: 500
+}
+
+.browserPageSectionTitle {
+    padding: 0px 20px;
+}
 
 /* LIGHT MODE STYLES */
 

@@ -24,7 +24,7 @@ const EducationBar = (props) => {
 const Education = (props) => {
 
     const {isSelected} = props;
-    const [selection, setSelection]=  useState(null);
+    const [selection, setSelection]=  useState(0);
     const [selectionHeader, setSelectionHeader] = useState(null);
 
     const setSelectionTitle = (title, subtitle, idx) => {
