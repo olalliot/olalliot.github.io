@@ -2,14 +2,16 @@ import { useState } from "react";
 import "./Settings.css";
 
 const LogoItem = (props) => {
-    const {icon, title, value} = props;
+    const {icon, title, value, link} = props;
 
     return(
         <div className="settingsInformationItem">
             <img className="settingsInformationIcon" alt="Information Icon" src={icon}/>
             <div className="settingsInformationText">
                 <p className="settingsInformationItemTitle">{title}</p>
-                <p className="settingsInformationItemValue"><a href={value} className="settingsInformationItemLink">{value}</a></p>
+                <p className="settingsInformationItemValue">
+                    {link ? <a href={value} className="settingsInformationItemLink">{value}</a>: <div className='settingsInformationItemLink'>{value}</div> }
+                </p>
             </div>
         </div>
     );
@@ -67,7 +69,7 @@ const Settings = (props) => {
                     <div className="settingsInformationItems">
                         {contact.map((c, idx) => {
                             return(
-                                <LogoItem icon={c.icon} title={c.title} value={c.value} key={idx} />
+                                <LogoItem icon={c.icon} title={c.title} value={c.value} key={idx} link={false} />
                             );
                         })}
                     </div>
@@ -77,8 +79,8 @@ const Settings = (props) => {
                         <p>Social Links</p>
                     </div>
                     <>
-                        <LogoItem icon="/icons/github.png" title="GitHub" value="https://github.com/olalliot" />
-                        <LogoItem icon="/icons/linkedin-logo.png" title="LinkedIn" value="https://www.linkedin.com/in/olalliot/" />
+                        <LogoItem icon="/icons/github.png" title="GitHub" value="https://github.com/olalliot" link={true}/>
+                        <LogoItem icon="/icons/linkedin-logo.png" title="LinkedIn" value="https://www.linkedin.com/in/olalliot/" link={true}/>
                     </>
                 </div>
                 <div className="settingsDownload">
@@ -88,7 +90,7 @@ const Settings = (props) => {
                     <div className="settingsDownloadButtonContainer" onClick={() => setFileDownloaded(true)}>
                         <a className={fileDownloaded ? "settingsDownloadButtonConfirm" : "settingsDownloadButton"} href={"/ResumeOctave.pdf"} download>
                             <img alt="Download icon" src={fileDownloaded ? "/icons/upvote.png" : "/icons/download.png"} className={fileDownloaded ? "settingsDownloadButtonIconConfirm" : "settingsDownloadButtonIcon"}/>
-                            Download my CV
+                            {fileDownloaded ? "Download Started" : "Download my CV"}
                         </a>
                     </div>
                 </div>
