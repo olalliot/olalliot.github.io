@@ -21,11 +21,11 @@ const App = () => {
   const [showWarning, setShowWarning] = useState(false);
   const [windows, setWindows] = useState({
     "Terminal" : {
-      "shown": false,
+      "shown": true,
       "index": 6,
     },
     "Settings" : {
-      "shown" : false,
+      "shown" : true,
       "index": 6,
     },
     "Browser" : {
