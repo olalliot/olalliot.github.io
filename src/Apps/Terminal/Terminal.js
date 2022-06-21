@@ -84,7 +84,7 @@ const Terminal = (props) => {
                 <div className="inputLine">
                     <h4>octave{">"}</h4>
                     <input
-                        autoFocus
+                        autoFocus={true}
                         type="text"
                         className="terminalInput" 
                         onKeyDown={checkForEnter}
