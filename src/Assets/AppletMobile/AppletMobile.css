@@ -1,0 +1,13 @@
+.appletMobileContainer {
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    height: auto;
+    align-items: center;
+    position: relative;
+}
+
+.appletIconMobile {
+    width: 100%;
+    height: auto
+}

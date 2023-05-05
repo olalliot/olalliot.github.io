@@ -88,7 +88,7 @@ const Settings = (props) => {
                         <p>CV</p>
                     </div>
                     <div className="settingsDownloadButtonContainer" onClick={() => setFileDownloaded(true)}>
-                        <a className={fileDownloaded ? "settingsDownloadButtonConfirm" : "settingsDownloadButton"} href={"/OctaveLalliotResume.pdf"} download>
+                        <a className={fileDownloaded ? "settingsDownloadButtonConfirm" : "settingsDownloadButton"} href={"/Octave_Lalliot_Resume.pdf"} download>
                             <img alt="Download icon" src={fileDownloaded ? "/icons/upvote.png" : "/icons/download.png"} className={fileDownloaded ? "settingsDownloadButtonIconConfirm" : "settingsDownloadButtonIcon"}/>
                             {fileDownloaded ? "Download Started" : "Download my CV"}
                         </a>

@@ -6,19 +6,11 @@ import Settings from './Apps/Settings/Settings';
 import Education from './Apps/Education/Education';
 import { useState, useEffect } from 'react';
 import './App.css';
+import Mobile from './Mobile';
 
-const WarningMessage = (props) => {
-  return (
-    <div className={props.showWarning ? "warningMessageContainer" : "hidden"}>
-      <h3>Woah Nelly!</h3>
-      <p className="warningMessageText">My website is only optimized for viewing on a computer (for now!). I highly recommend you switch over to your PC or Mac if possible. If not, I'd at least recommend you turn your phone into landscape mode to make the experience a little better. Check back soon to see when I implement the mobile version!</p>
-      <button className="warningMessageDismiss" onClick={() => props.dismissMessage()}>Sad to hear, but I understand</button>
-    </div>
-  );
-}
 
 const App = () => {
-  const [showWarning, setShowWarning] = useState(false);
+  const [showMobile, setShowMobile] = useState(false);
   const [windows, setWindows] = useState({
     "Terminal" : {
       "shown": true,
@@ -43,9 +35,14 @@ const App = () => {
   });
 
   useEffect(() => {
-    if (window.innerWidth < window.innerHeight) { // Very basic check to see if user is on mobile
-      setShowWarning(true);
+    const handleResize = () => {
+      if (window.innerWidth < window.innerHeight) { // Very basic check to see if user is on mobile
+        setShowMobile(true);
+      } else {
+        setShowMobile(false)
+      }
     }
+    window.addEventListener('resize', handleResize)
   }, []);
 
   const showWindow = (windowName) => {
@@ -71,6 +68,12 @@ const App = () => {
       }
     }
     setWindows({...windows});
+  }
+
+  if (showMobile) {
+    return(
+      <Mobile />
+    )
   }
 
   return (
@@ -113,7 +116,6 @@ const App = () => {
             <Applet src="/appIcons/terminal.png" label="About" isSelected={windows["Terminal"]["shown"]} target="Terminal" showWindow={showWindow}/>
             <Applet src="/appIcons/more.png" label="More" isSelected={windows["Settings"]["shown"]} target="Settings" showWindow={showWindow}/>
         </div>
-        <WarningMessage showWarning={showWarning} dismissMessage={() => setShowWarning(false)} />
       </>
   );
 } 
