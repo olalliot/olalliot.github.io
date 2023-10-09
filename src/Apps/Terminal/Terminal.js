@@ -20,13 +20,18 @@ const Terminal = (props) => {
 
     const bringToFront = () => {
         props.updateOrder("Terminal");
+        inputActive();
     }
 
+    const inputActive = () => {
+        console.log("Focusing")
+        textFieldRef?.current?.focus();
+    }
+    
+
     useEffect(() => { // This is to auto focus the text field
-        if (textFieldRef.current) {
-            textFieldRef.current.focus();
-        }
-    }, [])
+        inputActive();
+    }, [textFieldRef])
 
     useEffect(() => { //This is what scrolls the div to bottom after a user entry
         if (inputRef.current) {
@@ -45,7 +50,6 @@ const Terminal = (props) => {
 
     const checkUserInput = () => {
         const val = userInput.toLowerCase();
-        console.log(val);
         if (val === "clear") {
             setSections([setSections(() => [<UserCommand command={userInput}/>])])
         } else if (val === "about") {
@@ -84,8 +88,8 @@ const Terminal = (props) => {
                 <div className="inputLine">
                     <h4>octave{">"}</h4>
                     <input
-                        autoFocus={true}
                         type="text"
+                        ref={textFieldRef}
                         className="terminalInput" 
                         onKeyDown={checkForEnter}
                         onChange={(change) => userTyping(change)}

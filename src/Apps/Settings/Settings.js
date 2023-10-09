@@ -23,12 +23,12 @@ const Settings = (props) => {
     const contact = [
         {
             "title": "Address",
-            "value": " 54 Wexford Way, Basking Ridge NJ, USA",
+            "value": " 2 rue des Chatelaines, Meudon 92190",
             "icon": "/icons/home.png",
         },
         {
             "title": "Phone",
-            "value": " +1-734-882-7566",
+            "value": " 06 52 43 42 23",
             "icon": "/icons/phone.png"
         },
         {
@@ -59,7 +59,7 @@ const Settings = (props) => {
                     <img alt="Octave Lalliot profile" src="/profile.jpg" className="settingsProfile" />
                     <div className="settingsHeaderText">
                         <p className="settingsHeaderTitle">Octave Lalliot</p>
-                        <p className="settingsHeaderSubtitle">Web Dev • UI/UX Designer</p>
+                        <p className="settingsHeaderSubtitle">Junior Developer • UI/UX Designer</p>
                     </div>
                 </div>
                 <div className="settingsInformation">
